@@ -1,17 +1,18 @@
-import React from 'react';
+import React from "react";
+import { string, bool, func } from "prop-types";
 
-function FilterLink(props) {
-    return (
-        <a className={props.active ? 'is-active' : ''} onClick={props.onClick}>
-            <i className="material-icons">{props.icon}</i>
-        </a>
-    );
+function FilterLink({ active, onClick, icon }) {
+  return (
+    <a className={active ? "is-active" : ""} onClick={onClick}>
+      <i className="material-icons">{icon}</i>
+    </a>
+  );
 }
 
 FilterLink.propTypes = {
-    icon: React.PropTypes.string.isRequired,
-    active: React.PropTypes.bool.isRequired,
-    onClick: React.PropTypes.func.isRequired
+  icon: string.isRequired,
+  active: bool.isRequired,
+  onClick: func.isRequired
 };
 
 export default FilterLink;
