@@ -1,4 +1,5 @@
 import React from "react";
+import { arrayOf, shape, number, string, bool } from "prop-types";
 
 const Stats = ({ todos }) => {
   const total = todos.length;
@@ -23,6 +24,16 @@ const Stats = ({ todos }) => {
       </tbody>
     </table>
   );
+};
+
+Stats.propTypes = {
+  todos: arrayOf(
+    shape({
+      id: number.isRequired,
+      title: string.isRequired,
+      completed: bool.isRequired
+    })
+  ).isRequired
 };
 
 export default Stats;

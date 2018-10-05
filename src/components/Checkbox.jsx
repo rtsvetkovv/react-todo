@@ -1,4 +1,5 @@
 import React from "react";
+import { bool, func } from "prop-types";
 
 const Checkbox = ({ onChange, checked }) => {
   return (
@@ -8,6 +9,11 @@ const Checkbox = ({ onChange, checked }) => {
       </i>
     </button>
   );
+};
+
+Checkbox.propTypes = {
+  checked: bool.isRequired,
+  onChange: func.isRequired
 };
 
 export default Checkbox;

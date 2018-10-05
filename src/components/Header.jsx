@@ -1,4 +1,5 @@
 import React from "react";
+import { array } from "prop-types";
 
 import Stats from "./Stats";
 import Stopwatch from "./Stopwatch";
@@ -12,6 +13,10 @@ const Header = ({ todos }) => {
       <Stopwatch />
     </header>
   );
+};
+
+Header.propTypes = {
+  todos: array.isRequired
 };
 
 export default Header;

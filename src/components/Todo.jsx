@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { number, string, bool, func } from "prop-types";
 
 import Checkbox from "./Checkbox";
 import Button from "./Button";
@@ -8,7 +9,16 @@ class Todo extends Component {
     editing: false
   };
 
-  componentDidUpdate(prevProps, prevState) {
+  static propTypes = {
+    id: number.isRequired,
+    title: string.isRequired,
+    completed: bool.isRequired,
+    onDelete: func.isRequired,
+    onToggle: func.isRequired,
+    onEdit: func.isRequired
+  };
+
+  componentDidUpdate() {
     if (this.state.editing) {
       this.refs.title.focus();
       this.refs.title.select();
@@ -42,9 +52,7 @@ class Todo extends Component {
     return (
       <div className={className}>
         <Checkbox checked={this.props.completed} onChange={this.handleToggle} />
-
         <span className="todo-title">{this.props.title}</span>
-
         <Button className="edit icon" icon="edit" onClick={this.handleEdit} />
         <Button
           className="delete icon"

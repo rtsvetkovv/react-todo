@@ -1,10 +1,15 @@
 import React, { Component } from "react";
+import { func } from "prop-types";
 
 import Button from "./Button";
 
 class Form extends Component {
   state = {
     title: ""
+  };
+
+  static propTypes = {
+    onAdd: func.isRequired
   };
 
   handleSubmit = event => {
