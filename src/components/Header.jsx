@@ -4,6 +4,7 @@ import Stats from "./Stats";
 import Stopwatch from "./Stopwatch";
 
 const Header = ({ todos }) => {
+  // todos: state в mapStateToProps
   return (
     <header>
       <Stats todos={todos} />

@@ -6,6 +6,7 @@ import FormContainer from "./containers/FormContainer";
 
 const App = () => {
   return (
+    //здесь stateless component App рендрит контейнеры Header, List и Form
     <main>
       <HeaderContainer />
       <ListContainer />

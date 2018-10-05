@@ -1,5 +1,3 @@
-import React from "react";
-
 import { connect } from "react-redux";
 import { addTodo } from "../redux/actions";
 
@@ -9,7 +7,7 @@ import Form from "../components/Form";
 const mapDispatchToProps = dispatch => {
   // return <Form onAdd={this.handleAdd} /> -- было
   return {
-    onAdd: title => dispatch(addTodo(title))
+    onAdd: title => dispatch(addTodo(title)) //стало
   };
 };
 

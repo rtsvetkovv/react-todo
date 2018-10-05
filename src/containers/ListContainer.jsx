@@ -1,19 +1,14 @@
-import React from "react";
 import { connect } from "react-redux";
 
 import { deleteTodo, editTodo, toggleTodo } from "../redux/actions";
 
 import List from "../components/List";
-/**
- * <Старый код>
- */
-// todos={this.context.getState()}
-// onDelete={id => this.store.dispatch(deleteTodo(id))}
-// onToggle={id => this.store.dispatch(toggleTodo(id))}
-// onEdit={(id, title) => this.store.dispatch(editTodo(id, title))}
-/**
- * </Старый код>
- */
+// <Старый код>
+//   todos={this.context.getState()}
+//   onDelete={id => this.store.dispatch(deleteTodo(id))}
+//   onToggle={id => this.store.dispatch(toggleTodo(id))}
+//   onEdit={(id, title) => this.store.dispatch(editTodo(id, title))}
+// </Старый код>
 
 //Описывает свойства для компонента <List />
 // Предназначена для данных. Для массива с задачами

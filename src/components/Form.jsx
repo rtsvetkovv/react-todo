@@ -7,8 +7,6 @@ class Form extends Component {
     title: ""
   };
 
-  store = this.props.store;
-
   handleSubmit = event => {
     event.preventDefault();
 
