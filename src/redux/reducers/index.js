@@ -1,57 +1,34 @@
-import {
-  ADD_TODO,
-  TOGGLE_TODO,
-  EDIT_TODO,
-  DELETE_TODO
-} from "../actions/index";
+import { combineReducers } from "redux";
+import todos, * as fromTodo from "./todo";
+import filter from "./filter";
 
-const todoReducer = (state = {}, action) => {
-  switch (action.type) {
-    case ADD_TODO:
-      return {
-        id: action.id,
-        title: action.title,
-        completed: false
-      };
-    case TOGGLE_TODO:
-      if (state.id !== action.id) {
-        return state;
-      }
+//
+// ==========================================
+// const reducer = (state = {}, action) => {
+//   return {
+//     todos: todoReducer(state.todos, action),
+//     filter: filterReducer(state.filter, action)
+//   };
+// };
+// ==========================================
+// import filterReducer from "./filter";
+// import todoReducer from "./todo";
 
-      return Object.assign({}, state, {
-        completed: !state.completed
-      });
-    case EDIT_TODO:
-      if (state.id !== action.id) {
-        return state;
-      }
+// const reducer = combineReducers({
+//   todos: todoReducer,
+//   filter: filterReducer
+// });
+// ==========================================
 
-      return Object.assign({}, state, {
-        title: action.title
-      });
-    default:
-      return state;
-  }
-};
-
-const reducer = (state = [], action) => {
-  switch (action.type) {
-    case ADD_TODO:
-      return [...state, todoReducer(undefined, action)];
-
-    case DELETE_TODO:
-      const index = state.findIndex(todo => todo.id === action.id);
-      return [...state.slice(0, index), ...state.slice(index + 1)];
-
-    case TOGGLE_TODO:
-      return state.map(todo => todoReducer(todo, action));
-
-    case EDIT_TODO:
-      return state.map(todo => todoReducer(todo, action));
-
-    default:
-      return state;
-  }
-};
+// Принимает объект, в котором нужно сопоставить свойства объекта состояния
+// с соответсвующей функцией reducer
+const reducer = combineReducers({
+  todos, //так можно указывать, когда значения совпадают с названием свойств
+  filter
+});
 
 export default reducer;
+
+export const getFilteredTodos = state => {
+  return fromTodo.getFilteredTodos(state.todos, state.filter);
+};

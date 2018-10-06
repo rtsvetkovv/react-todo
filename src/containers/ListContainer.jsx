@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 
 import { deleteTodo, editTodo, toggleTodo } from "../redux/actions";
+import { getFilteredTodos } from "../redux/reducers";
 
 import List from "../components/List";
 // <Старый код>
@@ -17,7 +18,7 @@ const mapStateToProps = state => {
   return {
     //в качестве свойств у объекта указываются свойства у презинтационного компонента
     //для которого генерируется контейнер
-    todos: state // todos: state то же самое, что и todos={this.context.getState()}, только указано через объект
+    todos: getFilteredTodos(state) // todos: state то же самое, что и todos={this.context.getState()}, только указано через объект
   };
 };
 

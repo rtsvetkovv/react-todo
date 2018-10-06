@@ -12,7 +12,7 @@ import { connect } from "react-redux";
 const mapStateToProps = state => {
   return {
     //называем так же как и пропс, который принимает компонент Header
-    todos: state
+    todos: state.todos
   };
 };
 

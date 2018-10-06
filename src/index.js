@@ -1,17 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import { createStore } from "redux";
 import { Provider } from "react-redux";
 
-import reduser from "./redux/reducers";
-
-import todos from "./todos";
+import store from "./redux/store";
 import App from "./App";
-
-// стора принимает в себя reduser (который в зависимости от action
-// возвращает новое, изменённое состояние) и список задач todos, который она будет хранить
-const store = createStore(reduser, todos);
 
 ReactDOM.render(
   //Компонент Provider является проводником данных через контекст
