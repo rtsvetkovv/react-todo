@@ -5,6 +5,9 @@ import { Provider } from "react-redux";
 
 import store from "./redux/store";
 import App from "./App";
+import { getTodos } from "./redux/actions/todo";
+
+store.dispatch(getTodos());
 
 ReactDOM.render(
   //Компонент Provider является проводником данных через контекст

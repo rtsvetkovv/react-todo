@@ -18,7 +18,8 @@ const mapStateToProps = state => {
   return {
     //в качестве свойств у объекта указываются свойства у презинтационного компонента
     //для которого генерируется контейнер
-    todos: getFilteredTodos(state) // todos: state то же самое, что и todos={this.context.getState()}, только указано через объект
+    todos: getFilteredTodos(state), // todos: state то же самое, что и todos={this.context.getState()}, только указано через объект
+    loading: state.loading
   };
 };
 

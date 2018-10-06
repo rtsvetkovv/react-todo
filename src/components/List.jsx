@@ -3,21 +3,25 @@ import { arrayOf, shape, number, string, bool, func } from "prop-types";
 
 import Todo from "./Todo";
 
-const List = ({ todos, onDelete, onToggle, onEdit }) => {
+const List = ({ loading, todos, onDelete, onToggle, onEdit }) => {
   return (
     <div>
       <section className="todo-list">
-        {todos.map(todo => (
-          <Todo
-            key={todo.id}
-            id={todo.id}
-            title={todo.title}
-            completed={todo.completed}
-            onDelete={onDelete}
-            onToggle={onToggle}
-            onEdit={onEdit}
-          />
-        ))}
+        {todos.length && !loading ? (
+          todos.map(todo => (
+            <Todo
+              key={todo.id}
+              id={todo.id}
+              title={todo.title}
+              completed={todo.completed}
+              onDelete={onDelete}
+              onToggle={onToggle}
+              onEdit={onEdit}
+            />
+          ))
+        ) : (
+          <div className="loading">Загрузка...</div>
+        )}
       </section>
     </div>
   );

@@ -1,6 +1,7 @@
 import { combineReducers } from "redux";
 import todos, * as fromTodo from "./todo";
 import filter from "./filter";
+import loading from "./loading";
 
 //
 // ==========================================
@@ -24,7 +25,8 @@ import filter from "./filter";
 // с соответсвующей функцией reducer
 const reducer = combineReducers({
   todos, //так можно указывать, когда значения совпадают с названием свойств
-  filter
+  filter,
+  loading
 });
 
 export default reducer;
