@@ -1,4 +1,5 @@
 import { createStore, applyMiddleware } from "redux";
+//добавили promise & thunk из менеджера пакетов
 import promise from "redux-promise";
 import thunk from "redux-thunk";
 

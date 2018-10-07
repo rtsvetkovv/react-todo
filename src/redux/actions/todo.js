@@ -7,6 +7,7 @@ export const DELETE_TODO = "DELETE_TODO";
 export const TOGGLE_TODO = "TOGGLE_TODO";
 export const EDIT_TODO = "EDIT_TODO";
 
+//getTodos является функцией, которая возвращает другую функцию или thunk
 export const getTodos = () => {
   //возвращаем другую функцию
   return dispatch => {
@@ -25,6 +26,10 @@ export const getTodos = () => {
   };
 };
 
+/**
+ * ADD TODO
+ */
+
 export const addTodo = title => {
   return axios
     .post("http://localhost:5000/api/todos", { title: title })
@@ -35,6 +40,10 @@ export const addTodo = title => {
     }));
 };
 
+/**
+ * DELETE TODO
+ */
+
 export const deleteTodo = id => {
   return axios
     .delete(`http://localhost:5000/api/todos/${id}`)
@@ -43,6 +52,10 @@ export const deleteTodo = id => {
       id
     }));
 };
+
+/**
+ * TOGGLE TODO
+ */
 
 export const toggleTodo = id => {
   return axios
@@ -53,6 +66,10 @@ export const toggleTodo = id => {
       todo
     }));
 };
+
+/**
+ * EDIT TODO
+ */
 
 export const editTodo = (id, title) => {
   return axios

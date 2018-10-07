@@ -50,6 +50,10 @@ const reducer = (state = [], action) => {
   }
 };
 
+/**
+ * GET FILTER TODOS
+ */
+
 export const getFilteredTodos = (state, filter) => {
   switch (filter) {
     case "ALL":
