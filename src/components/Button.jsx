@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Button = ({ className, onClick, icon, children, ...props }) => {
   return (

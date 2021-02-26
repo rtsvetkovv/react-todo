@@ -1,26 +1,26 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import Button from "./Button";
+import Button from './Button';
 
 class Form extends Component {
   state = {
-    title: ""
+    title: '',
   };
 
   store = this.props.store;
 
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     event.preventDefault();
 
     const title = this.state.title;
 
     if (title) {
       this.props.onAdd(title);
-      this.setState({ title: "" });
+      this.setState({ title: '' });
     }
   };
 
-  handleChange = event => {
+  handleChange = (event) => {
     const title = event.target.value;
 
     this.setState({ title });

@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import Checkbox from "./Checkbox";
-import Button from "./Button";
+import Checkbox from './Checkbox';
+import Button from './Button';
 
 class Todo extends Component {
   state = {
-    editing: false
+    editing: false,
   };
 
   componentDidUpdate(prevProps, prevState) {
@@ -15,7 +15,7 @@ class Todo extends Component {
     }
   }
 
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     event.preventDefault();
 
     const title = this.refs.title.value;
@@ -37,7 +37,7 @@ class Todo extends Component {
   };
 
   renderDisplay = () => {
-    const className = `todo${this.props.completed ? " completed" : ""}`;
+    const className = `todo${this.props.completed ? ' completed' : ''}`;
 
     return (
       <div className={className}>

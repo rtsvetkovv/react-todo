@@ -1,15 +1,15 @@
-import React from "react";
+import React from 'react';
 
-import HeaderContainer from "./containers/HeaderContainer";
-import ListContainer from "./containers/ListContainer";
-import FormContainer from "./containers/FormContainer";
+import Header from './components/Header';
+import List from './components/List';
+import Form from './components/Form';
 
 const App = () => {
   return (
     <main>
-      <HeaderContainer />
-      <ListContainer />
-      <FormContainer />
+      <Header />
+      <List />
+      <Form />
     </main>
   );
 };

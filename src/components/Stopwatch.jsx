@@ -1,12 +1,12 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import Button from "./Button";
+import Button from './Button';
 
 class Stopwatch extends Component {
   state = {
     running: false,
     elapsed: 0,
-    lastTick: 0
+    lastTick: 0,
   };
 
   componentDidMount() {
@@ -24,7 +24,7 @@ class Stopwatch extends Component {
 
       this.setState({
         elapsed: this.state.elapsed + diff,
-        lastTick: now
+        lastTick: now,
       });
     }
   };
@@ -32,7 +32,7 @@ class Stopwatch extends Component {
   handleStart = () => {
     this.setState({
       running: true,
-      lastTick: Date.now()
+      lastTick: Date.now(),
     });
   };
 
@@ -44,17 +44,17 @@ class Stopwatch extends Component {
     this.setState({
       running: false,
       elapsed: 0,
-      lastTick: 0
+      lastTick: 0,
     });
   };
 
-  format = milliseconds => {
+  format = (milliseconds) => {
     const totalSeconds = Math.floor(milliseconds / 1000);
     const minutes = Math.floor(totalSeconds / 60);
     const seconds = totalSeconds % 60;
 
-    return `${minutes > 9 ? minutes : "0" + minutes}:${
-      seconds > 9 ? seconds : "0" + seconds
+    return `${minutes > 9 ? minutes : '0' + minutes}:${
+      seconds > 9 ? seconds : '0' + seconds
     }`;
   };
 

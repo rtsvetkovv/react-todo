@@ -1,14 +1,12 @@
-import React from "react";
+import React from 'react';
 
-import Stats from "./Stats";
-import Stopwatch from "./Stopwatch";
+import Stats from './Stats';
 
-const Header = ({ todos }) => {
+const Header = ({ todos = [] }) => {
   return (
     <header>
       <Stats todos={todos} />
       <h1>Redux Todo</h1>
-      <Stopwatch />
     </header>
   );
 };

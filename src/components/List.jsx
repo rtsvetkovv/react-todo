@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 
-import Todo from "./Todo";
+import Todo from './Todo';
 
-const List = ({ todos, onDelete, onToggle, onEdit }) => {
+const List = ({ todos = [], onDelete, onToggle, onEdit }) => {
   return (
     <div>
       <section className="todo-list">
-        {todos.map(todo => (
+        {todos.map((todo) => (
           <Todo
             key={todo.id}
             id={todo.id}

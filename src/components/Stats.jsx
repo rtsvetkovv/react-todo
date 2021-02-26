@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-const Stats = ({ todos }) => {
+const Stats = ({ todos = [] }) => {
   const total = todos.length;
-  const completed = todos.filter(todo => todo.completed).length;
+  const completed = todos.filter((todo) => todo.completed).length;
   const uncompleted = total - completed;
 
   return (
